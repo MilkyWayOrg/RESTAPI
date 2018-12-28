@@ -6,13 +6,13 @@ import java.util.List;
 
 import org.milkyway.model.User;
 import org.milkyway.service.UserDaoService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserDaoServiceImpl implements UserDaoService{
 	private static List<User> users=new ArrayList<User>();
 	private static int userCount=2;
 	static {
-	
-	
 	List<String> roles=new ArrayList<String>();
 	roles.add("ADMIN");
 	List<String> projects=new ArrayList<String>();
@@ -54,6 +54,10 @@ public class UserDaoServiceImpl implements UserDaoService{
 
 	@Override
 	public User saveUser(User user) {
+		if (user.getId() == null) {
+			Integer count=++userCount;
+			user.setId(count.toString());
+		}
 		users.add(user);
 		return user;
 	}

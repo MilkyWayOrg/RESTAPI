@@ -27,8 +27,8 @@ public class User {
 	private List<String> applications;
 	
 	
-	public User() {
-		// TODO Auto-generated constructor stub
+	private User() {
+		
 	}
 
 	

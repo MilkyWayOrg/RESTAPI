@@ -15,7 +15,6 @@ public class SecurityApplication extends SpringBootServletInitializer{ // extend
 		return application.sources(SecurityApplication.class);
 	}
 	public static void main(String[] args) {
-		System.setProperty("server.servlet.context-path", "/rest");
 		SpringApplication.run(SecurityApplication.class, args);
 	}
 }
